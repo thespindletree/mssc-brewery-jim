@@ -50,6 +50,5 @@ public class BeerController {
     @DeleteMapping({"/{beerId}"})
     public void deleteBeer(UUID beerId) {
         beerService.deleteById(beerId);
-
     }
 }
