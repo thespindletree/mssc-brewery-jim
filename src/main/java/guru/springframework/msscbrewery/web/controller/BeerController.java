@@ -1,14 +1,18 @@
-package guru.springframework.msscbreweryjim.web.controller;
+package guru.springframework.msscbrewery.web.controller;
 
-import guru.springframework.msscbreweryjim.services.BeerService;
-import guru.springframework.msscbreweryjim.web.model.BeerDto;
+import guru.springframework.msscbrewery.services.BeerService;
+import guru.springframework.msscbrewery.web.model.BeerDto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.UUID;
 
+/**
+ * Created by jt on 2019-04-20.
+ */
 @Deprecated
 @RequestMapping("/api/v1/beer")
 @RestController
@@ -20,14 +24,14 @@ public class BeerController {
         this.beerService = beerService;
     }
 
+    @GetMapping({"/{beerId}"})
+    public ResponseEntity<BeerDto> getBeer(@PathVariable("beerId") UUID beerId){
 
-    @GetMapping("/{beerId}")
-    public ResponseEntity<BeerDto> getBeer(@PathVariable("beerId") UUID beerID) {
-        return new ResponseEntity<BeerDto>(beerService.getBeerById(beerID), HttpStatus.OK);
+        return new ResponseEntity<>(beerService.getBeerById(beerId), HttpStatus.OK);
     }
 
     @PostMapping // POST - create new beer
-    public ResponseEntity handlePost(@RequestBody BeerDto beerDto){
+    public ResponseEntity handlePost(@Valid @RequestBody BeerDto beerDto){
 
         BeerDto savedDto = beerService.saveNewBeer(beerDto);
 
@@ -39,16 +43,17 @@ public class BeerController {
     }
 
     @PutMapping({"/{beerId}"})
-    public ResponseEntity handleUpdate(@PathVariable("beerId") UUID beerId, @RequestBody BeerDto beerDto){
+    public ResponseEntity handleUpdate(@PathVariable("beerId") UUID beerId, @Valid @RequestBody BeerDto beerDto){
 
         beerService.updateBeer(beerId, beerDto);
 
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)   // same as returning the response status
     @DeleteMapping({"/{beerId}"})
-    public void deleteBeer(UUID beerId) {
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteBeer(@PathVariable("beerId") UUID beerId){
         beerService.deleteById(beerId);
     }
+
 }

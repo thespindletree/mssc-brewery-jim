@@ -1,11 +1,14 @@
-package guru.springframework.msscbreweryjim.services;
+package guru.springframework.msscbrewery.services;
 
-import guru.springframework.msscbreweryjim.web.model.CustomerDto;
+import guru.springframework.msscbrewery.web.model.CustomerDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+/**
+ * Created by jt on 2019-04-21.
+ */
 @Slf4j
 @Service
 public class CustomerServiceImpl implements CustomerService {

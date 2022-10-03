@@ -1,7 +1,7 @@
-package guru.springframework.msscbreweryjim.web.controller;
+package guru.springframework.msscbrewery.web.controller;
 
-import guru.springframework.msscbreweryjim.services.CustomerService;
-import guru.springframework.msscbreweryjim.web.model.CustomerDto;
+import guru.springframework.msscbrewery.services.CustomerService;
+import guru.springframework.msscbrewery.web.model.CustomerDto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +30,7 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity handlePost(@RequestBody CustomerDto customerDto){
+    public ResponseEntity handlePost(CustomerDto customerDto){
         CustomerDto savedDto = customerService.saveNewCustomer(customerDto);
 
         HttpHeaders httpHeaders = new HttpHeaders();
@@ -41,7 +41,7 @@ public class CustomerController {
 
     @PutMapping("/{customerId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void handleUpdate(@PathVariable("customerId") UUID customerId, @RequestBody CustomerDto customerDto){
+    public void handleUpdate(@PathVariable("customerId") UUID customerId, CustomerDto customerDto){
         customerService.updateCustomer(customerId, customerDto);
     }
 

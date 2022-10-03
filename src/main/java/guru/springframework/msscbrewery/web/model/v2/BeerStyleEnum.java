@@ -1,4 +1,4 @@
-package guru.springframework.msscbreweryjim.web.model.v2;
+package guru.springframework.msscbrewery.web.model.v2;
 
 /**
  * Created by jt on 2019-04-23.
