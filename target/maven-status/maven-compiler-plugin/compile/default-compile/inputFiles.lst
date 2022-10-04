@@ -8,10 +8,13 @@
 /home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/services/BeerServiceImpl.java
 /home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/web/model/CustomerDto.java
 /home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/services/CustomerService.java
+/home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/web/mappers/CustomerMapper.java
 /home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/MsscBreweryApplication.java
 /home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/web/controller/BeerController.java
 /home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/web/controller/MvcExceptionHandler.java
 /home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/web/model/v2/BeerStyleEnum.java
 /home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/domain/Beer.java
 /home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/services/BeerService.java
+/home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/web/mappers/DateMapper.java
+/home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/domain/Customer.java
 /home/jim/git/mssc-brewery-jim/src/main/java/guru/springframework/msscbrewery/services/v2/BeerServiceV2Impl.java
