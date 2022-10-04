@@ -10,9 +10,6 @@ import org.mapstruct.Mapper;
 @Mapper
 public interface BeerMapper {
 
-    //test comment
-
-
     BeerDto beerToBeerDto(Beer beer);
 
     Beer beerDtoToBeer(BeerDto dto);
